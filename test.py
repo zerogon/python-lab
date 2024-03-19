@@ -1,30 +1,23 @@
-a = "He11oWor1d"
-b = "lloWorl"
-# aBcDeFg
-# AbCdEfG
-answer = ""
 '''
-for i in range(len(a)) :
-    if a[i] == a[i].lower() :
-        answer += a[i].upper()
-    else :
-        answer += a[i].lower()
+[3, 4, 5, 2, 1]	393
+[5, 7, 8, 3]	581
 '''
-#print(answer)
+num_list = [3, 4, 5, 2, 1]
+answer = 0
 
-#print('''!@#$%^&*(\\'"<>?:;''')
+val1 = ""
+val2 = ""
 
-#a, b = map(int, input().strip().split(' '))
-#print(a, '+', b,'=',a+b)
-
-# 대소문자 변경
-#print(a.swapcase())
-
-'''
-"He11oWor1d"	"lloWorl"	2	"HelloWorld"
-"Program29b8UYP"	"merS123"	7	"ProgrammerS123"
-'''
-c = 2
-print(a[0:c] + b + a[len(b)+len(a[0:c]):])
+even = ''.join(str(i) for i in num_list if i % 2 == 0 )
+odd =  ''.join(str(i) for i in num_list if i % 2 != 0 )
 
 
+
+
+
+
+
+
+
+
+    

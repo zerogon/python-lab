@@ -1,0 +1,48 @@
+# 대소문자 변경
+word = "aa"
+print(word.swapcase())
+
+# 문자열 붙이기
+str1 = "t"
+str2 = "v"
+print(str1, '+', str2,'=',str1+str2)
+
+#반복문
+word = "aidme"
+for i in word :
+    print(i)
+
+#list to string
+list = ["a", "b"]
+result = "".join(list)
+
+#정수를 문자열로 만들기
+intVal = "3"
+str3 = f"{intVal}"
+print(intVal)
+
+#삼항 연산
+# answer = (참인 경우) if (조건)  else (아닌 경우)
+
+# & -> and , or
+
+# return int(eval(str(n)+ineq+eq.replace('!', '')+str(m)))
+
+# set 사용하기
+def solution(a, b, c):
+    check=len(set([a,b,c]))
+    if check==1:
+        return 3*a*3*(a**2)*3*(a**3)
+    elif check==2:
+        return (a+b+c)*(a**2+b**2+c**2)
+    else:
+        return (a+b+c)
+
+# 리스트 컴프리핸션
+strlist = [str(n) for n in num_list]
+even = ''.join(str(i) for i in num_list if i % 2 == 0 )
+
+# 내장함수 eval -> 문자열 표현식을 계산
+
+
+
