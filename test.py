@@ -1,17 +1,23 @@
 '''
-[3, 4, 5, 2, 1]	393
-[5, 7, 8, 3]	581
+
+[0, 1, 2, 4, 3]	[[0, 4, 2],[0, 3, 2],[0, 2, 2]]	[3, 4, -1]
 '''
-num_list = [3, 4, 5, 2, 1]
-answer = 0
+arr, queries = [0, 1, 2, 4, 3],[[0, 4, 2],[0, 3, 2],[0, 2, 2]]	
+answer = []
+tmp = []
 
-val1 = ""
-val2 = ""
+for a, b, c in queries :
+    for i in arr[a:b+1] :
+        if i > c :
+            tmp.append(i)
+    if len(tmp)== 0 : tmp = [-1]
+    answer.append(min(tmp))
+    tmp = []
 
-even = ''.join(str(i) for i in num_list if i % 2 == 0 )
-odd =  ''.join(str(i) for i in num_list if i % 2 != 0 )
+print(answer)
 
-
+    #for a,b in queries:
+     #   arr[a],arr[b]=arr[b],arr[a]
 
 
 

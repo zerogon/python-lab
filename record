@@ -44,5 +44,11 @@ even = ''.join(str(i) for i in num_list if i % 2 == 0 )
 
 # 내장함수 eval -> 문자열 표현식을 계산
 
+# 셋 활용
+n, control = 0, "wsdawsdassw"
+answer = 0
+dic = { "w":1 , "s": -1 , "d": 10, "a": -10}
+for i in control :
+    answer += dic[i]
 
 
