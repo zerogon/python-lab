@@ -1,25 +1,18 @@
 '''
-"rermgorpsam"	[[2, 3], [0, 7], [5, 9], [6, 10]]	"programmers"
+my_string	is_suffix	result
+"banana"	"ana"	1
+"banana"	"nan"	0
+"banana"	"wxyz"	0
+"banana"	"abanana"	0
 '''
 
-my_string, queries = "rermgorpsam", [[2, 3], [0, 7], [5, 9], [6, 10]]
-
-list = [i for i in my_string]
-#progrmersam
-a = list[0:3].reverse()
-print(a)
+my_string, is_suffix = "banana", "nan"
+list =  [ my_string[i:] for i in range(len(my_string)) if my_string[i:] == is_suffix]
 
 
-#for a, b in queries :
- #   list[a], list[b] = list[b], list[a]
 
-#answer = "".join(list)
-#print(answer)
+answer = 1 if len([m[i:] for i in range(len(m)) if m[i:] == s])>0  else 0
 '''
-[2, 3]	"remrgorpsam"
-[0, 7]	"progrmersam"
-[5, 9]	"prograsremm"
-[6, 10]	"programmers"
-'''
-
-
+ if m[-len(s):]==s: return 1
+    return 0
+    '''

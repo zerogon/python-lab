@@ -41,6 +41,7 @@ def solution(a, b, c):
 # 리스트 컴프리핸션
 strlist = [str(n) for n in num_list]
 even = ''.join(str(i) for i in num_list if i % 2 == 0 )
+list = [int(i[s:s+l]) for i in intStrs if int(i[s:s+l]) > k]
 
 # 내장함수 eval -> 문자열 표현식을 계산
 
@@ -61,3 +62,6 @@ for i in range(len(arr)) :
 
 # join
 answer = ''.join([my_string[i] for i in index_list])
+
+#오름차순
+answer = sorted([my_string[i:] for i in range(len(my_string))])
