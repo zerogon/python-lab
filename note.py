@@ -1,18 +1,12 @@
+
 '''
-my_string	is_suffix	result
-"banana"	"ana"	1
-"banana"	"nan"	0
-"banana"	"wxyz"	0
-"banana"	"abanana"	0
+네개가 같은 "rermgorpsam"	[[2, 3], [0, 7], [5, 9], [6, 10]]	"programmers"
 '''
+my_string, queries = "rermgorpsam",	[[2, 3], [0, 7], [5, 9], [6, 10]]
 
-my_string, is_suffix = "banana", "nan"
-list =  [ my_string[i:] for i in range(len(my_string)) if my_string[i:] == is_suffix]
+answer = ''
+for a, b in queries :
+   my_string = my_string[0:a]+"".join(my_string[a:b+1][::-1])+my_string[b+1:]
 
+print(my_string[0:3][::-1])
 
-
-answer = 1 if len([m[i:] for i in range(len(m)) if m[i:] == s])>0  else 0
-'''
- if m[-len(s):]==s: return 1
-    return 0
-    '''
