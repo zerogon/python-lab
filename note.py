@@ -1,12 +1,20 @@
 
 '''
-네개가 같은 "rermgorpsam"	[[2, 3], [0, 7], [5, 9], [6, 10]]	"programmers"
+q	r	code	result
+3	1	"q[j]nw[e]zg[r]pi[r]ld[y]wt"	"jerry"
+
+
+        code	q	j	n	w	e	z	g	r	p	i	r	l	d	y	w	t
+       index	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15
+q로 나눈 나머지	 0 	1	2	0	1	2	0	1	2
 '''
-my_string, queries = "rermgorpsam",	[[2, 3], [0, 7], [5, 9], [6, 10]]
+# 1 , 5, 9 , 13
+q, r, code= 3,	1,	"qjnwezgrpirldywt"
 
-answer = ''
-for a, b in queries :
-   my_string = my_string[0:a]+"".join(my_string[a:b+1][::-1])+my_string[b+1:]
+print(code[r::q])
 
-print(my_string[0:3][::-1])
+
+
+
+
 

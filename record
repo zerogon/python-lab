@@ -70,3 +70,7 @@ answer = sorted([my_string[i:] for i in range(len(my_string))])
 my_string = "rermgorpsam"
 for a, b in queries :
    my_string = my_string[0:a]+"".join(my_string[a:b+1][::-1])+my_string[b+1:]
+
+# startwith endwith
+my_string = "aa"
+my_string.startswith(is_prefix)
