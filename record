@@ -74,3 +74,14 @@ for a, b in queries :
 # startwith endwith
 my_string = "aa"
 my_string.startswith(is_prefix)
+
+# pass 0에서 2개씩 건너뛰기
+code[0::2]
+
+# 문자열 유니코드로
+ord("a")
+char(65) = A
+
+#range 반대로 활용
+range(10,0,-1) 
+-> 10 9 8 7 ,,
