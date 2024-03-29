@@ -1,14 +1,18 @@
-
 '''
+arr	query	result
+[0, 1, 2, 3, 4, 5]	[4, 1, 2]	[1, 2, 3]
+
+4	[0, 1, 2, 3, 4, 5]	[0, 1, 2, 3, 4]	0번 인덱스의 쿼리이므로 뒷부분을 자른다.
+1	[0, 1, 2, 3, 4]	[1, 2, 3, 4]	1번 인덱스의 쿼리이므로 앞부분을 자른다.
+2	[1, 2, 3, 4]	[1, 2, 3]	2번 인덱스의 쿼리이므로 뒷부분을 자른다.
 '''
-arr, idx = [0, 0, 0, 1]	,1	
-answer = 0
+arr	, query= [0, 1, 2, 3, 4, 5]	,[4, 1, 2]
 
-for i, v in enumerate(arr) :
-    if i >= idx :
-        if v == 1 :
-            answer = i
+for i, v in enumerate(query) :
+    if i % 2 :
+         arr = arr[v:]
+    else :
+         arr = arr[0:v+1]
+answer = arr
 
 
-
-print(answer)

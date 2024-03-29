@@ -85,3 +85,7 @@ char(65) = A
 #range 반대로 활용
 range(10,0,-1) 
 -> 10 9 8 7 ,,
+
+# 배열 할당
+slicer = [1,2,3]
+a,b,c = slicer
