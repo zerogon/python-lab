@@ -89,3 +89,12 @@ range(10,0,-1)
 # 배열 할당
 slicer = [1,2,3]
 a,b,c = slicer
+
+#배열 합
+num_list = [1,2,3]
+answer = max(sum(num_list[::2]), sum(num_list[1::2]))
+
+#3항 + for
+for (s, e) in queries:
+    arr = [a+1 if s <= i <= e else a for i, a in enumerate(arr)]
+return arr

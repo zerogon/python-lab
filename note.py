@@ -1,18 +1,16 @@
 '''
-arr	query	result
-[0, 1, 2, 3, 4, 5]	[4, 1, 2]	[1, 2, 3]
-
-4	[0, 1, 2, 3, 4, 5]	[0, 1, 2, 3, 4]	0번 인덱스의 쿼리이므로 뒷부분을 자른다.
-1	[0, 1, 2, 3, 4]	[1, 2, 3, 4]	1번 인덱스의 쿼리이므로 앞부분을 자른다.
-2	[1, 2, 3, 4]	[1, 2, 3]	2번 인덱스의 쿼리이므로 뒷부분을 자른다.
+num_list	result
+[4, 2, 6, 1, 7, 6]	17
+[-1, 2, 5, 6, 3]	8
 '''
-arr	, query= [0, 1, 2, 3, 4, 5]	,[4, 1, 2]
-
-for i, v in enumerate(query) :
-    if i % 2 :
-         arr = arr[v:]
-    else :
-         arr = arr[0:v+1]
-answer = arr
-
-
+num_list = [4, 2, 6, 1, 7, 6]	
+answer = 0
+odd = 0
+even = 0
+for i, v in enumerate(num_list) :
+     if i % 2 : 
+          odd += v
+     else :
+          even += v
+answer = max(odd,even)       
+sum = 0
