@@ -98,3 +98,10 @@ answer = max(sum(num_list[::2]), sum(num_list[1::2]))
 for (s, e) in queries:
     arr = [a+1 if s <= i <= e else a for i, a in enumerate(arr)]
 return arr
+
+# product 모든항의 곱, import 필요, from math import prod
+prod()
+
+# in 
+myString , pat = "AbCdEfG", "aBc"
+print(pat.upper() in myString.upper()) # True Fales
