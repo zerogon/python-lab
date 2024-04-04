@@ -1,11 +1,9 @@
 '''
-myString	result
-"abstract algebra"	"AbstrAct AlgebrA"
-"PrOgRaMmErS"	"progrAmmers"
+my_string	result
+"i love you"	["i", "love", "you"]
+"programmers"	["programmers"]
 '''
-myString = "abstract algebra"
-answer = myString.lower().replace("a", "A")
-    
+my_string = "i  love you"
 
-
+answer = [ v for v in my_string.split(" ") if v != '']
 
