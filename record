@@ -105,3 +105,7 @@ prod()
 # in 
 myString , pat = "AbCdEfG", "aBc"
 print(pat.upper() in myString.upper()) # True Fales
+
+# 사칙연산
+binomial = "43 + 12"
+answer = eval(binomial)

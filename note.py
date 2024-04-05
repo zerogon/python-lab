@@ -1,9 +1,11 @@
 '''
-my_string	result
-"i love you"	["i", "love", "you"]
-"programmers"	["programmers"]
+myString	pat	result
+"ABBAA"	"AABB"	1
+"ABAB"	"ABAB"	0
 '''
-my_string = "i  love you"
+myString, pat = "ABBAA"	,"AABB"
 
-answer = [ v for v in my_string.split(" ") if v != '']
+myString = myString.replace("A","C").replace("B","A").replace("C","B")
+print(int(pat in myString.replace("A","C").replace("B","A").replace("C","B") ))
+
 
