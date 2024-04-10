@@ -1,19 +1,30 @@
 '''
-arr 	k	 result
-[0, 1, 1, 2, 2, 3]	3	[0, 1, 2]
-[0, 1, 1, 1, 1]	4	[0, 1, -1, -1]
+4 5 1
+1 2
+1 3
+1 4
+2 4
+3 4
 '''
-arr , k =[0, 1, 1, 2, 2, 3]	,3
-# arr 의 값을 순서대로 넣는다.
-answer = []
-for i in arr :
-    if answer.count(i) == 0 :
-        answer.append(i)
-    
-print(answer)
 
-# 중복된 값은 제외한다.
+from collections import defaultdict
 
-# 넣어진 값의 크기가 k개가 됐을 경우 리턴.
+gragh = [[1,2], [1,3], [1,4], [2,4],[3,4]]
+def solution(start, gragh) :
+    adj_list = defaultdict(list)
+    for u, v in gragh :
+        adj_list[u].append(v)
 
-# 최종값이 k보다 작은 경우 -1로 채운다.
+    def dfs(node, visited, result) :
+        visited.add(node)
+        result.append(node)
+        for i in adj_list.get(node,[]) :
+            if i not in visited :
+                dfs(i, visited, result)
+
+    visited = set()
+    result = []
+    dfs(start, visited, result)
+    return result
+lst = solution(1, gragh)
+print(lst)
