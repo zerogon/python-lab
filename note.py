@@ -1,30 +1,18 @@
 '''
-4 5 1
-1 2
-1 3
-1 4
-2 4
-3 4
+arr	n	result
+[49, 12, 100, 276, 33]	27	[76, 12, 127, 276, 60]
+[444, 555, 666, 777]	100	[444, 655, 666, 877]
 '''
-
-from collections import defaultdict
-
-gragh = [[1,2], [1,3], [1,4], [2,4],[3,4]]
-def solution(start, gragh) :
-    adj_list = defaultdict(list)
-    for u, v in gragh :
-        adj_list[u].append(v)
-
-    def dfs(node, visited, result) :
-        visited.add(node)
-        result.append(node)
-        for i in adj_list.get(node,[]) :
-            if i not in visited :
-                dfs(i, visited, result)
-
-    visited = set()
-    result = []
-    dfs(start, visited, result)
-    return result
-lst = solution(1, gragh)
-print(lst)
+arr	, n = [49, 12, 100, 276, 33],	27
+gksghk455
+# arr 의 길이가 홀수 인 경우 -> 짝수 인덱스에 n값 더하기 
+# arr 의 길이가 짝수 인 경우
+if len(arr) % 2 : 
+    for i, v in enumerate(arr) :
+        if not i % 2 :
+            arr[i] = arr[i] + n
+else :
+    for i, v in enumerate(arr) :
+        if i % 2 :
+            arr[i] = arr[i] + n
+print(arr)

@@ -19,7 +19,7 @@ def solution(gragh, start) :
     adj_list = defaultdict(list)
     for u, v in gragh :
         adj_list[u].append(v)
-
+        # {'A': ['B', 'C'], 'B': ['D', 'E'], 'C': ['F'], 'E': ['F']})
     def dfs(node, visited, result) :
         visited.add(node)
         result.append(node)
