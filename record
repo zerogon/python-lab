@@ -109,3 +109,14 @@ print(pat.upper() in myString.upper()) # True Fales
 # 사칙연산
 binomial = "43 + 12"
 answer = eval(binomial)
+
+#딕셔너리 활용
+dic={}
+answer = 1
+for a, b in clothes :
+    if b not in dic.keys() :
+        dic[b] = [a]
+    else :
+        dic[b] += [a]
+for k, v in dic.items() :
+    answer *= (len(v) + 1)
