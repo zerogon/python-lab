@@ -1,15 +1,5 @@
 import sys
 sys.stdin = open('input.txt', 'rt')
-'''
-n = input()
-lst = []
-for _ in range(int(n)) :
-    lst.append(list(map(int, input().split())))
-print(lst)
-'''
-
-'''
-'''
 class Node:
     def __init__(self, data, left_node, right_node) :
         self.data = data
@@ -50,3 +40,8 @@ print()
 in_order(tree['A'])
 print()
 post_order(tree['A'])
+
+
+
+
+        
