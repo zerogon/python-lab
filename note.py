@@ -1,36 +1,61 @@
 '''
-rank	attendance	result
-[3, 7, 2, 5, 4, 6, 1]	[false, true, true, true, true, false, false]	20403
-[1, 2, 3]	[true, true, true]	102
-[6, 1, 5, 2, 3, 4]	[true, false, true, false, false, true]	50200
 
-1   2   3   4   5   6
-f   f   f   t   t   t
-1   4   4   5   2   0
+순열 https://www.acmicpc.net/problem/10972
 
- 10000 × a + 100 × b + c
-
-[1 : (f, 1) 2 : (f : 2)
 '''
+# 트리
+import sys
+sys.stdin = open('input.txt', 'rt')
 
-rank, attendance = [6, 1, 5, 2, 3, 4], [True, False, True, False, False, True]
+
+class Node :
+    def __init__(self, data, left_node, right_node):
+        self.data = data
+        self.left_node = left_node
+        self.right_node = right_node
+
+
+def in_order(node) :
+    if node.left_node != None :
+        in_order(node.left_node)
+    print(node.data, end= ' ')
+    if node.right_node != None :
+        in_order(node.right_node)
+
+def pre_order(node) :
+    print(node.data, end= ' ')
+    if node.left_node != None :
+        pre_order(dic[node.left_node])
+    if node.right_node != None :
+        pre_order(dic[node.right_node])
+
+def post_order(node) :
+    if node.left_node != None :
+        post_order(node.left_node)
+    if node.right_node != None :
+        post_order(node.right_node)
+    print(node.data, end= ' ')
+
+N  =  int(input())
 dic = {}
-lst = []
-for i, v in enumerate(rank) :
-    dic[v] = (attendance[i], i)
-lst = [dic[v][1] for v in sorted(dic) if dic[v][0]]
-answer = 10000 * lst[0] + 100 * lst[1] + lst[2]
-print(answer)
+for _ in range(N) :
+    data, a, b = input().split()
+    if a == '.' : a = None
+    if b == '.' : b = None
+    dic[data] = Node(data, a, b)
+
+pre_order(dic["A"])
+
+
+
+
+
+
+
+
+
+
 
 
 
         
-
-
-
-
-
-
-
-
-

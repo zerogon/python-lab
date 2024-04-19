@@ -31,21 +31,26 @@ genres ,	plays =["classic", "pop", "classic", "classic", "pop"],	[500, 600, 150,
 
 dic1 = {}
 dic2 = {}
+'''
+for i in range(len(genres)) :
+    dic1[genres[i]] = dic1.get(genres[i],[])+[plays[i]]
+print(dic1)
+'''
 for i, v in enumerate(genres) :
     if v not in dic1.keys() :
         dic1[v] = plays[i]
     else :
         dic1[v] += plays[i]
+
+print(dic1)
 for i, v in enumerate(genres) :
     if v not in dic2.keys() :
         dic2[v] = [(i, plays[i])]
     else :
         dic2[v] += [(i, plays[i])]
 print(dic2)
-
 sorted_keys = sorted(dic1,key= lambda x : dic1[x], reverse=True)
 #s2 = sorted(dic2,key= lambda x : dic2[x][1], reverse=True)
-print(dic2['pop'][1][0])
 
 
 
