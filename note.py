@@ -1,61 +1,35 @@
 '''
+d	budget	result
+[1,3,2,5,4]	9	3
+[2,2,3,3]	10	4
 
-순열 https://www.acmicpc.net/problem/10972
+
+1 2 3 4 5
+
+9 - 1 = 8 answer + 1  > 2
+8 - 2 = 6 answer + 1  > 2
+6 - 3 = 3 answer + 1  < 4
 
 '''
-# 트리
-import sys
-sys.stdin = open('input.txt', 'rt')
+d, budget = [2,2,3,3], 10
+answer = 1
 
+# 정렬한다
+# 앞에서부터 값을 budget값에서 뺀다 뺀값이 다음값보다 크면 빼고 answer값 증가한다.
+# 뺀 값이 다음값보다 작으면 멈춘다
 
-class Node :
-    def __init__(self, data, left_node, right_node):
-        self.data = data
-        self.left_node = left_node
-        self.right_node = right_node
+d.sort()
+for i,v in enumerate(d) :
+    if (budget - v) > d[i+1] :
+        budget -= v 
+        answer += 1
+    else :
+        break
 
-
-def in_order(node) :
-    if node.left_node != None :
-        in_order(node.left_node)
-    print(node.data, end= ' ')
-    if node.right_node != None :
-        in_order(node.right_node)
-
-def pre_order(node) :
-    print(node.data, end= ' ')
-    if node.left_node != None :
-        pre_order(dic[node.left_node])
-    if node.right_node != None :
-        pre_order(dic[node.right_node])
-
-def post_order(node) :
-    if node.left_node != None :
-        post_order(node.left_node)
-    if node.right_node != None :
-        post_order(node.right_node)
-    print(node.data, end= ' ')
-
-N  =  int(input())
-dic = {}
-for _ in range(N) :
-    data, a, b = input().split()
-    if a == '.' : a = None
-    if b == '.' : b = None
-    dic[data] = Node(data, a, b)
-
-pre_order(dic["A"])
+print(answer)
 
 
 
 
+    
 
-
-
-
-
-
-
-
-
-        
