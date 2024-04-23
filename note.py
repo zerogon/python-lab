@@ -1,35 +1,25 @@
 '''
-d	budget	result
-[1,3,2,5,4]	9	3
-[2,2,3,3]	10	4
+N = 5
+K = 2
+answer 3
+'''
+from collections import deque
 
-
-1 2 3 4 5
-
-9 - 1 = 8 answer + 1  > 2
-8 - 2 = 6 answer + 1  > 2
-6 - 3 = 3 answer + 1  < 4
+N, K = 5, 2
+answer = 0
 
 '''
-d, budget = [2,2,3,3], 10
-answer = 1
+1 2 3 4 5
 
-# 정렬한다
-# 앞에서부터 값을 budget값에서 뺀다 뺀값이 다음값보다 크면 빼고 answer값 증가한다.
-# 뺀 값이 다음값보다 작으면 멈춘다
+1 (2) 3 4 5
 
-d.sort()
-for i,v in enumerate(d) :
-    if (budget - v) > d[i+1] :
-        budget -= v 
-        answer += 1
-    else :
-        break
+1 (2) 3 [4] 5
 
-print(answer)
+[1] (2) 3 (4) 5
 
+(1) (2) 3 (4) [5]
 
+'''
+from collections import deque
 
-
-    
-
+queue = deque(range(1))
