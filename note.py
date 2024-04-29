@@ -1,13 +1,14 @@
 '''
-myString	result
-"abcdevwxyz"	"lllllvwxyz"
-"jjnnllkkmm"	"llnnllllmm"
+board	k	result
+[[0, 1, 2],[1, 2, 3],[2, 3, 4],[3, 4, 5]]	2	8
+
 '''
 
-n = 3
-answer = [[0 for _ in range(n)] for _ in range(n)]
-for i in range(n) :
-    answer[i][i] = 1
-
-    
+board = [[0, 1, 2],[1, 2, 3],[2, 3, 4],[3, 4, 5]]
+k = 2
+answer = 0
+for i in range(len(board)) :
+    for j in range(len(board[i])) :
+        if i + j <= k :
+          answer += board[i][j]
 print(answer)

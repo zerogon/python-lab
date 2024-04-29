@@ -110,3 +110,6 @@ print(pat.upper() in myString.upper()) # True Fales
 binomial = "43 + 12"
 answer = eval(binomial)
 
+# 전치 lessons/181831
+# [[]] -> [()] -> [[]] -> list 
+int(arr == list(map(list, zip(*arr))))
