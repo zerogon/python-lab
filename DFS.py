@@ -11,7 +11,6 @@ start
 2. 가장 최근 노드 인지
 3. 이미 방문여부 
 '''
-
 from collections import defaultdict
 gragh = [['A','B'],['A','C'],['B','D'],['B','E'],['C','F'],['E','F']]
 start = 'A'

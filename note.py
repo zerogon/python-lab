@@ -1,14 +1,50 @@
 '''
-board	k	result
-[[0, 1, 2],[1, 2, 3],[2, 3, 4],[3, 4, 5]]	2	8
+s	result
+"[](){}"	3
+"}]()[{"	2
+"[)(]"	0
+"}}}"	0
 
+
+0	"[](){}"	O
+1	"](){}["	X
+
+2	"(){}[]"	O  ['[']
+
+3	"){}[]("	X
+4	"{}[]()"	O
+5	"}[](){"	X
 '''
 
-board = [[0, 1, 2],[1, 2, 3],[2, 3, 4],[3, 4, 5]]
-k = 2
+s = "[)(]"
 answer = 0
-for i in range(len(board)) :
-    for j in range(len(board[i])) :
-        if i + j <= k :
-          answer += board[i][j]
+stack = []
+for i in range(len(s)):
+    # 올바른 문자열 확인
+    for j in s :
+        if j == "[" :
+            stack.append(j)
+        elif j == "(" :
+            stack.append(j)
+        elif j == "{" :
+            stack.append(j)
+        elif j == "]" :
+            if stack :
+              stack.pop()
+        elif j == ")" :
+            if stack :
+               stack.pop()
+        elif j == "}" :
+            if stack :
+              stack.pop()
+    # 맨 앞글자를 맨 뒤로 이동
+    print(i, stack)
+    if len(stack) == 0 :
+      answer +=1
+      
+
+    lst = list(s)
+    lst.append(lst.pop(0))
+    s = "".join(lst)
+    stack.clear()
 print(answer)
